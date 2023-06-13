@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeweb
+spec:
+  selector:
+    matchLabels:
+      app: nodeweb
+  template:
+    metadata:
+      labels:
+        app: nodeweb
+    spec:
+      containers:
+      - name: nodeweb
+        image: monyslim/nodeweb:3
+        resources:
+          limits:
+            memory: "108Mi"
+            cpu: "50m"
+        ports:
+        - containerPort: 4141

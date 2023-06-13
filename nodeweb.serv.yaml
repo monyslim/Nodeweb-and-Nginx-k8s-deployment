@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeweb
+spec:
+  type: LoadBalancer
+  selector:
+    app: nodeweb
+  ports:
+  - port: 4141
+    targetPort: 4141
+    nodePort: 32000
